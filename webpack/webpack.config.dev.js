@@ -6,22 +6,21 @@ const dist = path.dirname(path.resolve(__dirname)) + '/dist';
 module.exports = {
   mode: 'development',
   entry: src,
-  devtool: 'inline-source-map',
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ]
-  },
-  resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
-  },
   output: {
     filename: 'app.js',
     path: dist,
     publicPath: 'dist'
   },
+  devtool: 'inline-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        use: ['babel-loader']
+      },
+    ]
+  },
+  resolve: {
+    extensions: [ '.tsx', '.ts', '.js' ],
+  }
 };
