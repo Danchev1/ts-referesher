@@ -1,16 +1,13 @@
-const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
-// const src = path.join(process.cwd(), 'src');
-const app = path.join(process.cwd(), 'src/app.ts');
-const dist = path.join(process.cwd(), 'dist');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const dir = require('./utils/dir');
 
 module.exports = {
   mode: 'production',
-  entry: app,
+  entry: dir.entryPath,
   output: {
     filename: 'app.js',
-    path: dist
+    path: dir.distPath
   },
   devtool: false,
   module: {
@@ -25,6 +22,9 @@ module.exports = {
     extensions: [ '.tsx', '.ts', '.js' ],
   },
   plugins: [
-      new CleanWebpackPlugin.CleanWebpackPlugin()
+      new CleanWebpackPlugin.CleanWebpackPlugin(),
+      new HtmlWebpackPlugin({
+        template: dir.indexHtmlPath
+      })
   ]
 };

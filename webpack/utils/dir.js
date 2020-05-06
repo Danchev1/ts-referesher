@@ -1,7 +1,8 @@
 const path = require('path');
 
 module.exports = {
-    src: path.join(process.cwd(), 'src'),
-    app: path.join(process.cwd(), 'src/app.ts'),
-    dist: path.join(process.cwd(), 'dist')
+    srcPath: path.join(process.cwd(), 'src'),
+    distPath: path.join(process.cwd(), 'dist'),
+    entryPath: path.join(process.cwd(), 'src/app.ts'),
+    indexHtmlPath: path.join(process.cwd(), 'src/index.html'),
 };
