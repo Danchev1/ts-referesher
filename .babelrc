@@ -1,15 +1,16 @@
 {
-  "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "useBuiltIns": "usage"
-      }
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": {
+                    "version": 3,
+                    "proposal": true
+                }
+            }
+        ],
+        "@babel/preset-typescript"
     ],
-    "@babel/preset-typescript"
-  ],
-  "ignore": [
-    "node_modules",
-    "dist"
-  ]
+    "ignore": ["node_modules", "dist"]
 }

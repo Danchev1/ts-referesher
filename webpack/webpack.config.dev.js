@@ -1,15 +1,20 @@
 const path = require('path');
 
-const src = path.dirname(path.resolve(__dirname)) + '/src/app.ts';
-const dist = path.dirname(path.resolve(__dirname)) + '/dist';
+// const src = path.join(process.cwd(), 'src');
+const app = path.join(process.cwd(), 'src/app.ts');
+const dist = path.join(process.cwd(), 'dist');
 
 module.exports = {
   mode: 'development',
-  entry: src,
+  entry: app,
   output: {
     filename: 'app.js',
     path: dist,
     publicPath: 'dist'
+  },
+  devServer: {
+    port: 8888,
+    contentBase: dist,
   },
   devtool: 'inline-source-map',
   module: {
