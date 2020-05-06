@@ -1,5 +1,5 @@
 const greetings = (greeting: string): void => {
-  console.log(greeting);
+    console.log(greeting);
 };
 
 greetings('Enter TypeScript');
