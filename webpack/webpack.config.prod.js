@@ -13,13 +13,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
-        use: 'babel-loader'
+        test: /\.ts?$/,
+        use: ['babel-loader', 'eslint-loader']
       },
     ]
   },
   resolve: {
-    extensions: [ '.tsx', '.ts', '.js' ],
+    extensions: ['.ts', '.js' ],
   },
   plugins: [
       new CleanWebpackPlugin.CleanWebpackPlugin(),
