@@ -1,3 +1,4 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const dir = require('./utils/dir');
 
 module.exports = {
@@ -18,10 +19,29 @@ module.exports = {
             {
                 test: /\.ts?$/,
                 use: ['babel-loader', 'eslint-loader']
+            },
+            {
+                test: /\.(sa|sc|c)ss$/,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: true
+                        }
+                    },
+                    'css-loader',
+                    'postcss-loader',
+                    'sass-loader'
+                ]
             }
         ]
     },
     resolve: {
         extensions: ['.ts', '.js']
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        })
+    ]
 };

@@ -1,3 +1,4 @@
+import './assets/scss/index.scss';
 import { simpleFunc } from './js/simple';
 
 const greetings = (greeting: string): string => {
