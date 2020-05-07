@@ -12,5 +12,6 @@
         ],
         "@babel/preset-typescript"
     ],
+    "compact": true,
     "ignore": ["node_modules", "dist"]
 }
