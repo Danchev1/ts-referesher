@@ -42,7 +42,12 @@ module.exports = {
         }),
         new CleanWebpackPlugin.CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            template: dir.indexHtmlPath
+            template: dir.indexHtmlPath,
+            inject: true,
+            minify: {
+                removeComments: true,
+                collapseWhitespace: false
+            }
         })
     ]
 };
