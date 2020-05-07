@@ -11,14 +11,28 @@
   "scripts": {
     "start:dev": "webpack-dev-server --config webpack/webpack.config.dev.js",
     "build:prod": "webpack --config webpack/webpack.config.prod.js",
+    "test:watch": "jest --watchAll",
+    "test:coverage": "jest --coverage",
     "eslint": "eslint src --ext .ts"
+  },
+  "jest": {
+    "verbose": true,
+    "collectCoverageFrom": [
+      "**/*.{ts,js}",
+      "!**/node_modules/**",
+      "!**/coverage/**",
+      "!**/dist/**",
+      "!**/webpack/**"
+    ]
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
+    "@types/jest": "^25.2.1",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
+    "babel-jest": "^26.0.1",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
@@ -27,6 +41,7 @@
     "eslint-loader": "^4.0.2",
     "eslint-plugin-prettier": "^3.1.3",
     "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.0.1",
     "prettier": "^2.0.5",
     "ts-loader": "^7.0.2",
     "typescript": "^3.8.3",
